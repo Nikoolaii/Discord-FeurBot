@@ -2,12 +2,15 @@ from nextcord.ext import commands
 import nextcord
 import os
 import pyfiglet
+from dotenv import load_dotenv
+from nextcord.ext import commands
 
 intents = nextcord.Intents.default()
 intents.message_content = True
 
-bot = commands.Bot(command_prefix='', intents=intents)
+load_dotenv()
 
+bot = commands.Bot(command_prefix='', intents=intents)
 
 @bot.event
 async def on_ready():
@@ -19,4 +22,4 @@ async def on_ready():
 async def quoi(ctx):
     await ctx.send("Feur")
 
-bot.run("MTAwMTkwNzEyNDYzNDM5NDY1NA.Gj-DvI.EvtHBUyp_kFnui9FB3suCg7Hrtckcim2GyWaw8")
+bot.run(os.getenv("BOT_TOKEN"))
