@@ -31,14 +31,14 @@ async def on_message(message):
 
 
 @bot.event
-async def on_guild_remove():
+async def on_guild_remove(self):
     await bot.change_presence(status=nextcord.Status.idle,
                               activity=nextcord.Activity(type=nextcord.ActivityType.watching,
                                                          name=f"quoi sur {len(bot.guilds)} serveurs"))
 
 
 @bot.event
-async def on_guild_join():
+async def on_guild_join(self):
     await bot.change_presence(status=nextcord.Status.idle,
                               activity=nextcord.Activity(type=nextcord.ActivityType.watching,
                                                          name=f"quoi sur {len(bot.guilds)} serveurs"))
