@@ -20,6 +20,7 @@ async def on_ready():
 
 @bot.event
 async def on_message(message):
+    message.content = message.content.lower()
     if "quoi" in message.content:
         channel = message.channel
         await channel.send("Feur")
